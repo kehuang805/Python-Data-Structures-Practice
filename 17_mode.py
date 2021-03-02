@@ -11,3 +11,9 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    freq_numbers = {num: nums.count(num) for num in nums}
+    most_common = 0
+    for key in freq_numbers:
+        if freq_numbers[key] > most_common:
+            most_common = key
+    return most_common
