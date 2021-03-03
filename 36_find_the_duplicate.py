@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def find_the_duplicate(nums):
     """Find duplicate number in nums.
 
@@ -13,3 +16,9 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+
+    num_counter = Counter(nums)
+    most_common = num_counter.most_common(1)
+    if most_common[0][1] != 1:
+        return most_common[0][0]
+
